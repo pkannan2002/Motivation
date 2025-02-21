@@ -19,6 +19,9 @@ async def get_motivation():
         model="llama-3.3-70b-versatile",
     )
     return {"motivation": response.choices[0].message.content}
+@app.get("/")
+def read_root():
+    return {"message": "Hello, Render!"}
 
 if __name__ == "__main__":
     import uvicorn
